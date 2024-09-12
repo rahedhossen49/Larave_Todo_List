@@ -5,9 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Todo Application @yield('title')</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  @notifyCss
+
+  <style>
+    .notify {
+      z-index: 999999;
+    }
+  </style>
 </head>
 <body>
-
+  <x:notify::notify />
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark mt-15">
   <div class="container">
 <h5 class="text-light">Todo Application</h5>
@@ -43,5 +50,6 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+@notifyJs
 </body>
 </html>

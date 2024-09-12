@@ -10,29 +10,31 @@
 <div class="alert alert-success">{{session('message')}}</div>
 @endif
   <div class="card-header bg-dark text-white">
-    <h4 class="text-center">Your Todo List</h4>
+    <h4 class="text-center">Edit Todo List</h4>
   </div>
     <div class="card-body">
-      <form action="{{route('todo.store')}}" method="POST">
+      <form action="{{route('todo.update',$todo->id)}}" method="POST">
         @csrf
+        @method('patch')
       </div>
       <label for="">Enter Your Title</label>
-        <input type="text" name="title" value="{{old('title')}}" class="form-control my-2" placeholder="Todo Title">
+        <input type="text" name="title" value="{{$todo->title}}" class="form-control my-2" placeholder="Todo Title">
         @error('title')
           <span class="text-danger">{{$message}}</span>
         @enderror
         <label for="">Enter Your Detail</label>
-        <textarea name="detail" id="" class="form-control my-2" placeholder="Tode Details">{{old('detail')}}</textarea>
+        <textarea name="detail" id="" class="form-control my-2" placeholder="Tode Details">{{$todo->detail}}</textarea>
         @error('detail')
         <span class="text-danger">{{$message}}</span>
       @enderror
         <label for="">Enter Your Name</label>
-        <input type="text" name="author" value="{{old('author')}}" class="form-control my-2" placeholder="Author">
+        <input type="text" name="author" value="{{$todo->author}}" class="form-control my-2" placeholder="Author">
         @error('author')
         <span class="text-danger">{{$message}}</span>
       @enderror
-        <button type="submit" class="btn btn-primary my-3">Add Todo</button
+        <button type="submit" class="btn btn-primary my-4">Update Todo</button
       </form>
+
 
   </div>
  </div>
