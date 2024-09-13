@@ -2,7 +2,18 @@
 
 @section('content')
 
+<style>
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
 
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+</style>
 
  <div class="col-lg-5 mx-auto">
   <div class="card mt-5">
